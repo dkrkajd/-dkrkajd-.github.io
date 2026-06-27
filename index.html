@@ -1,0 +1,83 @@
+HTML
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Aero Tistory Skin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 전체 배경 레이어 (원하는 배경 이미지로 변경 가능) -->
+    <div class="desktop-background">
+        
+        <!-- 메인 윈도우 창 (Aero 효과) -->
+        <div class="window-container">
+            
+            <!-- 윈도우 상단 타이틀바 & 웹 주소창 느낌 (image_6eb5bf.jpg 참고) -->
+            <div class="window-header">
+                <div class="window-controls">
+                    <span class="control-btn minimize"></span>
+                    <span class="control-btn maximize"></span>
+                    <span class="control-btn close"></span>
+                </div>
+                <div class="address-bar">
+                    <span class="nav-arrows">◀ ▶</span>
+                    <div class="url-input">https://your-tistory-blog.tistory.com</div>
+                </div>
+                <!-- 탭 메뉴 -->
+                <div class="window-tabs">
+                    <div class="tab active">Home</div>
+                    <div class="tab">Category</div>
+                    <div class="tab">Guestbook</div>
+                </div>
+            </div>
+
+            <!-- 메인 콘텐츠 영역 (2단 분할 레이아웃) -->
+            <div class="window-body">
+                
+                <!-- 좌측: 사이드바 (프로필 및 소개) -->
+                <aside class="sidebar">
+                    <div class="profile-frame">
+                        <!-- 프로필 이미지 (티스토리 치환자 적용될 곳) -->
+                        <img src="https://via.placeholder.com/150" alt="프로필" class="profile-img">
+                    </div>
+                    <h2 class="blog-title">Your Name</h2>
+                    <p class="blog-desc">info/info/info<br>Welcome to my blog!</p>
+                    
+                    <!-- 링크/SNS 버튼들 -->
+                    <div class="profile-links">
+                        <a href="#" class="link-item">⭐ Twitter</a>
+                        <a href="#" class="link-item">⭐ Instagram</a>
+                        <a href="#" class="link-item">⭐ Log</a>
+                    </div>
+                </aside>
+
+                <!-- 우측: 메인 글 영역 -->
+                <main class="main-content">
+                    <div class="post-card">
+                        <h1 class="post-title">Title Here (글 제목)</h1>
+                        <div class="post-thumb">
+                            <img src="https://via.placeholder.com/500x200/7ec8e3/ffffff" alt="본문 썸네일">
+                        </div>
+                        <div class="post-body">
+                            <p>티스토리 블로그 본문 내용이 들어가는 자리입니다. 이미지들을 참고하여 맑고 투명한 에어로 스타일의 레이아웃을 구성했습니다. 이 영역에 티스토리 글 반복문 치환자(s_article_rep)를 넣으시면 됩니다.</p>
+                        </div>
+                    </div>
+                </main>
+                
+            </div>
+
+            <!-- 하단 바 (image_6eb5bf.jpg의 하단 언어/상태창 느낌) -->
+            <div class="window-footer">
+                <button class="footer-btn blue-btn">Blog Home</button>
+                <button class="footer-btn green-btn">Profile Info</button>
+                <span class="footer-status">⚡ Online</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
