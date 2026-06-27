@@ -1,0 +1,254 @@
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 데스크탑 배경 (원하는 푸른 하늘/풀밭 이미지로 교체 가능) */
+.desktop-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #74b9ff, #a1e3f9, #ffeaa7);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 메인 윈도우 - Aero Glass 효과 핵심 */
+.window-container {
+    width: 100%;
+    max-width: 900px;
+    height: 85vh;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 
+                inset 0 0 20px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px); /* 뒤 배경 흐리게 만드는 투명 유리 효과 */
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 윈도우 헤더 / 타이틀바 */
+.window-header {
+    background: linear-gradient(to bottom, rgba(230, 242, 255, 0.7), rgba(195, 221, 247, 0.7));
+    padding: 10px 15px 0 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.window-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 5px;
+}
+
+.control-btn {
+    width: 26px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+.minimize { background: #b2bec3; }
+.maximize { background: #ffeaa7; }
+.close { background: #ff7675; }
+
+/* 주소창 */
+.address-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
+.nav-arrows {
+    color: #0984e3;
+    cursor: pointer;
+}
+
+.url-input {
+    flex-grow: 1;
+}
+
+/* 탭 메뉴 */
+.window-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.tab {
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 6px 6px 0 0;
+    font-size: 13px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-bottom: none;
+    cursor: pointer;
+    color: #2d3436;
+}
+
+.tab.active {
+    background: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    border-top: 2px solid #74b9ff;
+}
+
+/* 메인 바디 영역 분할 */
+.window-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+/* 좌측 사이드바 (프로필) */
+.sidebar {
+    width: 220px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(240, 247, 255, 0.5);
+}
+
+.profile-frame {
+    width: 130px;
+    height: 130px;
+    padding: 6px;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.blog-title {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #2d3436;
+}
+
+.blog-desc {
+    font-size: 12px;
+    color: #636e72;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.profile-links {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.link-item {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px;
+    background: #fff;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #2f3640;
+    font-size: 13px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.link-item:hover {
+    background: #f1f2f6;
+}
+
+/* 우측 본문 영역 */
+.main-content {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto; /* 본문 스크롤 가능하게 */
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.post-title {
+    font-size: 22px;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.post-thumb img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.post-body {
+    font-size: 14px;
+    color: #2d3436;
+    line-height: 1.6;
+}
+
+/* 하단 푸터 바 */
+.window-footer {
+    background: linear-gradient(to bottom, rgba(220, 235, 252, 0.8), rgba(185, 215, 245, 0.8));
+    padding: 8px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-btn {
+    padding: 6px 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* image_6eb5bf.jpg 특유의 입체감 있는 버튼 그라데이션 */
+.blue-btn {
+    background: linear-gradient(to bottom, #74b9ff, #0984e3);
+}
+.green-btn {
+    background: linear-gradient(to bottom, #55efc4, #00b894);
+}
+
+.footer-status {
+    margin-left: auto;
+    font-size: 12px;
+    color: #636e72;
+}
