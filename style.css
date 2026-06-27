@@ -1,199 +1,178 @@
-/* 전체 기본 설정 */
+/* 기본 초기화 */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Malgun Gothic', 'Segoe UI', sans-serif;
+    font-family: 'MS PGothic', 'Malgun Gothic', sans-serif;
 }
 
-body, html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* 1. 컴퓨터 바탕화면 배경 설정 */
-.desktop-background {
-    width: 100%;
-    height: 100%;
-    /* ⭐ 배경을 이미지로 바꾸고 싶다면 아래 주석을 풀고 이미지 주소를 넣으세요 */
-    /* background: url('여기에_배경_이미지_주소') no-repeat center center/cover; */
-    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* 기본 푸른 하늘색 그라데이션 */
+/* 전체 배경색: 이미지와 유사한 부드러운 노란빛/연두빛 톤 */
+body {
+    background-color: #f1fbc5; 
+    padding: 20px 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
-/* 2. 에어로 글래스(투명 유리창) 효과 */
-.window-container {
+/* 블로그 중심 틀 */
+.blog-wrapper {
     width: 100%;
-    max-width: 850px;
-    height: 80vh;
-    background: rgba(255, 255, 255, 0.4); /* 반투명 흰색 */
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 
-                inset 0 0 15px rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px); /* 흐림 효과 */
-    -webkit-backdrop-filter: blur(12px);
-    display: flex;
-    flex-direction: column;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    padding: 15px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+}
+
+/* [상단 대문 썸네일] */
+.blog-header {
+    margin-bottom: 15px;
+    border: 2px solid #444;
+}
+
+.header-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
     overflow: hidden;
+    aspect-ratio: 950 / 350;
 }
 
-/* 상단 타이틀바 */
-.window-header {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(200,225,255,0.4));
-    padding: 10px 15px 0 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+.header-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.window-controls {
+.banner-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+/* [3단 레이아웃 본문 전개] */
+.blog-body {
     display: flex;
-    justify-content: flex-end;
-    gap: 5px;
+    gap: 15px;
+}
+
+/* 공통 사이드바 크기 */
+.left-sidebar { width: 200px; flex-shrink: 0; }
+.right-sidebar { width: 200px; flex-shrink: 0; }
+
+/* 중앙 본문 영역 (가운데 정렬 및 유연한 크기) */
+.main-content {
+    flex: 1;
+    min-width: 0; /* 텍스트 넘침 방지 */
+}
+
+/* 각 구성 요소 블록 스타일 (틀 느낌) */
+.box {
+    background: #fff;
+    border: 2px solid #ff9ff3; /* 핑크색 아기자기한 테두리 */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.box h3 {
+    font-size: 13px;
+    background: #ffcbd5;
+    padding: 4px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ff9ff3;
+    color: #ff4757;
+}
+
+/* 1. 좌측 요소: 달력 커스텀 */
+.calendar-demo {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    font-size: 11px;
+    text-align: center;
+}
+.calendar-demo .sat { color: blue; }
+.calendar-demo .sun { color: red; }
+
+/* 이미지/움짤 박스 안의 이미지들 */
+.gif-placeholder img, .profile-img-wrap img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* 2. 중앙 본문 내용 박스 */
+.blog-post {
+    background: #ffffff;
+    border: 2px solid #48dbfb; /* 본문은 하늘색 테두리로 포인트 */
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #1dd1a1;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-.control-btn {
-    width: 25px;
-    height: 15px;
-    border-radius: 2px;
-    border: 1px solid rgba(0,0,0,0.15);
-}
-.minimize { background: #cbd5e1; }
-.maximize { background: #fef08a; }
-.close { background: #fca5a5; }
-
-/* 주소창 */
-.address-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0.1);
-    margin-bottom: 8px;
-    font-size: 12px;
-    color: #666;
+.post-title {
+    font-size: 16px;
+    color: #222;
+    border-bottom: 2px dotted #48dbfb;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
 }
 
-.nav-arrows { color: #3b82f6; font-weight: bold; }
-
-/* 탭 메뉴 */
-.window-tabs { display: flex; gap: 3px; }
-.tab {
-    padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 5px 5px 0 0;
-    font-size: 12px;
-    border: 1px solid rgba(0,0,0,0.05);
-    border-bottom: none;
-    color: #475569;
-    cursor: pointer;
-}
-.tab.active {
-    background: rgba(255, 255, 255, 0.8);
-    font-weight: bold;
-    color: #0f172a;
-}
-
-/* 메인 영역 분할 */
-.window-body {
-    display: flex;
-    flex: 1;
-    background: rgba(255, 255, 255, 0.8); /* 내부 창 바탕색 */
-    overflow: hidden;
-}
-
-/* 좌측 프로필 사이드바 */
-.sidebar {
-    width: 210px;
-    border-right: 1px solid rgba(0,0,0,0.08);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(245, 250, 255, 0.3);
-}
-
-.profile-frame {
-    width: 120px;
-    height: 120px;
-    padding: 5px;
-    background: linear-gradient(135deg, #a7f3d0, #fde047); /* 초록+노랑 테두리 그라데이션 */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
-.profile-name { font-size: 16px; margin-top: 10px; color: #334155; }
-.profile-info { font-size: 12px; color: #64748b; margin-bottom: 15px; }
-
-.status-box {
-    width: 100%;
+.post-body {
     font-size: 13px;
-    color: #475569;
-    line-height: 1.8;
-}
-.highlight { color: #16a34a; font-weight: bold; }
-
-/* SNS 링크들 */
-.sns-links { display: flex; gap: 8px; margin-top: auto; }
-.sns-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
-    border: 1px solid #cbd5e1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
 }
 
-/* 우측 본문 스크롤 영역 */
-.main-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.post-container {
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 20px;
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.post-title { font-size: 20px; color: #1e293b; margin-bottom: 15px; }
-.main-banner img { width: 100%; border-radius: 6px; margin-bottom: 15px; }
-.post-text { font-size: 13px; color: #334155; line-height: 1.6; }
-.intro-p { font-size: 14px; font-weight: bold; color: #2563eb; margin-bottom: 10px; }
-
-/* 하단 푸터 바 */
-.window-footer {
-    background: linear-gradient(to bottom, rgba(240,245,255,0.6), rgba(210,225,250,0.6));
-    padding: 8px 15px;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-btn {
-    padding: 5px 15px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    color: white;
+/* 3. 우측 요소: 프로필 및 카테고리 */
+.profile-desc {
     font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    text-align: center;
+    margin-top: 5px;
+    color: #555;
 }
-.blue-btn { background: linear-gradient(to bottom, #60a5fa, #2563eb); }
-.green-btn { background: linear-gradient(to bottom, #4ade80, #16a34a); }
-.footer-icons { margin-left: auto; color: #64748b; font-size: 14px; gap: 5px; }
+
+.category-box ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.category-box li {
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.category-box a {
+    text-decoration: none;
+    color: #576574;
+}
+
+.category-box a:hover {
+    color: #ff4757;
+    text-decoration: underline;
+}
+
+/* 반응형 화면 대응 (화면이 작아지면 세로로 정렬되게) */
+@media (max-width: 850px) {
+    .blog-body {
+        flex-direction: column;
+    }
+    .left-sidebar, .right-sidebar {
+        width: 100%;
+    }
+}
