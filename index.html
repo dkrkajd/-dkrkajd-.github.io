@@ -4,56 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>らき☆すた Blog</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- 경로 인식 오류를 예방하기 위해 ./style.css 로 연결했습니다 -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
+    <!-- 블로그 전체를 감싸는 컨테이너 -->
     <div class="blog-wrapper">
         
+        <!-- [상단 영역: 대문 썸네일 대용 타이틀바] -->
         <header class="blog-header">
             <div class="header-banner">
-                <img src="https://via.placeholder.com/950x400/ffccd5/ff4757?text=LUCKY+STAR+BANNER" alt="대문 썸네일">
-                <div class="banner-title">らき☆すた Space</div>
+                <div class="banner-title">らき☆すた Space ★</div>
+                <div class="banner-subtitle">Welcome to my 2000s retro website</div>
             </div>
         </header>
 
+        <!-- [하단 콘텐츠 영역: 3단 분할] -->
         <div class="blog-body">
             
+            <!-- 1. 좌측 사이드바 (캘린더 & 미니 박스) -->
             <aside class="left-sidebar">
+                <!-- 캘린더 박스 -->
                 <div class="box calendar-box">
                     <h3>📅 2026年 6月</h3>
                     <div class="calendar-demo">
                         <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
                         <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span class="sat">6</span><span class="sun">7</span>
+                        <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span class="sat">13</span><span class="sun">14</span>
+                        <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span class="sat">20</span><span class="sun">21</span>
+                        <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span class="sat">27</span><span class="sun">28</span>
                     </div>
                 </div>
+                <!-- 애니메이션 박스 -->
                 <div class="box gif-box">
                     <h3>✨ Animation</h3>
                     <div class="gif-placeholder">
-                        <img src="https://via.placeholder.com/150/74b9ff/ffffff?text=GIF+Here" alt="작은 움짤">
+                        <div class="mini-pixel-art">(~‾⌣‾)~</div>
                     </div>
                 </div>
             </aside>
 
+            <!-- 2. 중앙 메인 (본문 내용) -->
             <main class="main-content">
                 <article class="blog-post">
                     <div class="post-date">2026年 6月 27日 (土)</div>
                     <h2 class="post-title">★ 오늘 작성하는 블로그 본문 제목!</h2>
                     <div class="post-body">
-                        <p>여기에 실제 본문 내용이 들어갑니다. 2000년대 초반 개인 홈피 느낌이 나도록 밝은 연두색 배경 위에 아기자기하게 배치했습니다.</p>
+                        <p>여기에 실제 본문 내용이 들어갑니다. 2000년대 초반 개인 홈피 느낌이 나도록 아기자기하게 배치했습니다.</p>
                         <p>이 영역에 원하는 글과 일기를 잔뜩 적어보세요!</p>
+                        <br>
+                        <p class="emoticon">＼(★^∀^★)／</p>
                     </div>
                 </article>
             </main>
 
+            <!-- 3. 우측 사이드바 (프로필 & 카테고리) -->
             <aside class="right-sidebar">
+                <!-- 프로필 박스 -->
                 <div class="box profile-box">
                     <h3>👤 PROFILE</h3>
                     <div class="profile-img-wrap">
-                        <img src="https://via.placeholder.com/150/a8e6cf/ffffff?text=CHARACTER" alt="프로필">
+                        <div class="avatar-placeholder">⭐</div>
                     </div>
-                    <p class="profile-desc">Welcome to my space! ⭐️</p>
+                    <p class="profile-desc">Welcome to my space!</p>
                 </div>
+                <!-- 카테고리 박스 -->
                 <div class="box category-box">
                     <h3>📂 CATEGORY</h3>
                     <ul>
